@@ -1,0 +1,9 @@
+# Runtime used to produce the manuscript results: Python 3.12.7 on Windows
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.13.1
+torch==2.7.1
+numba==0.60.0
+matplotlib==3.9.2
+seaborn==0.13.2
+openpyxl==3.1.5
