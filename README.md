@@ -13,15 +13,15 @@ execution has been removed; every script runs sequentially in a single process.*
 
 | Path | Role | Manuscript element |
 |---|---|---|
-| `training/train_standard.py` | Dueling QR-DQN baseline agent (no mask, no FiLM) | Sec. 2.2, ablation "Standard" |
+| `training/train_standard.py` | Dueling QR-DQN baseline agent (no mask, no FiLM) | Sec. 3.2, ablation "Standard" |
 | `training/train_masking.py` | QR-DQN + invalid-action masking | ablation "Masking" |
 | `training/train_film.py` | QR-DQN + FiLM hardware conditioning (no mask) | ablation "FiLM" |
 | `training/train_proposed.py` | QR-DQN + FiLM + invalid-action masking (proposed) | proposed controller |
-| `baselines/rule_based.py` | Rule-based heuristic controller (RBH) | Sec. 2.3 baseline |
-| `baselines/mpc.py` | Model predictive control, horizon H=24, maxiter=100 | Sec. 2.3 baseline |
-| `baselines/dp.py` | Perfect-foresight dynamic program, single state (battery energy), NS=200 | Sec. 2.3 upper bound |
-| `optimization/mopso_*.py` | Multi-objective PSO outer loop (standard/film/drl/mpc/dp evaluator) | Sec. 2.4 / Fig. 9 |
-| `utils/plume_calculator.py` | Bubble-plume / effective-volume (`z_m`, `b_m`, `Q_t`, `kata`) calculator | Sec. 2.1 / App. A |
+| `baselines/rule_based.py` | Rule-based heuristic controller (RBH) | Sec. 3.3 baseline |
+| `baselines/mpc.py` | Model predictive control, horizon H=24, maxiter=100 | Sec. 3.3 baseline |
+| `baselines/dp.py` | Perfect-foresight dynamic program, single state (battery energy), NS=200 | Sec. 3.3 upper bound |
+| `optimization/mopso_*.py` | Multi-objective PSO outer loop (standard/film/drl/mpc/dp evaluator) | Sec. 3.4 / Fig. 9 |
+| `utils/plume_calculator.py` | Bubble-plume / effective-volume (`z_m`, `b_m`, `Q_t`, `kata`) calculator | Sec. 3.1 / App. A |
 | `utils/data_noise.py` | Generate noisy observation datasets | robustness inputs |
 | `utils/complexity.py`, `utils/find_conditions.py` | Complexity illustration and plume-condition finder (stand-alone plotters) | App. / Fig. |
 | `data/` | Processed hourly environmental data 2021–2025 and noisy 2025 variants | inputs |
@@ -97,8 +97,6 @@ converted from cm to m, exactly as in the manuscript.
 
 ## 6. Notes and scope
 
-- The validated kelp-growth model used for the biomass discussion (Sec. 3.3.4) is maintained
-  in a separate repository and is not required to reproduce the control/co-design results.
 - `results/` is intentionally empty; re-running a script writes its outputs there.
 - All randomness is seeded: training replicates use seeds 0–4, and the fixed
   configuration set uses seed 42.
